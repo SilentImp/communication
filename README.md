@@ -1,3 +1,3 @@
-# Краткое руководство по гридам
+# Как сделать чекаут лучше
 
-* [Слайды](https://silentimp.github.io/grid/)
+* [Слайды](https://silentimp.github.io/paymentRequestAPI/)

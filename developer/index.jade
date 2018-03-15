@@ -117,6 +117,167 @@ block slides
 
     article.screen.screen--autofill-config
 
+    article.example.example--payment
+        button(type="button" id="pay") Купить
+        script.
+            const methodData = [{
+                supportedMethods: "basic-card",
+            }];
+            const details = {
+              id: "order-1",
+              displayItems: [{
+                label: "Уточка",
+                amount: {
+                  currency: "USD",
+                  value: "5.00"
+                },
+              },{
+                label: "Cвинка",
+                amount: {
+                  currency: "USD",
+                  value: "3.00"
+                },
+              }],
+              total: {
+                label: "Всего",
+                amount: {
+                  currency: "USD",
+                  value: "8.00"
+                },
+              },
+            };
+            const options = {
+              requestPayerEmail: true,
+              requestPayerName: true,
+              requestPayerPhone: true,
+              requestShipping: false,
+            }
+            let request = new PaymentRequest(methodData, details, options);
+            const button = document.getElementById('pay');
+            const validate = function () {
+                return Math.round(Math.random()) === 1 ? 'success' : 'fail';
+            }
+            const check = async function () {
+                const response = await request.show();
+                console.log(response);
+                await response.complete(validate());
+                request = new PaymentRequest(methodData, details, options);
+            };
+            button.addEventListener('click', check);
+
+    article.center
+        .wrapper
+            ul.need
+                li  methodData
+                li  details
+                li  methooptionsdData
+
+    article.center.code-6
+        .wrapper
+            pre
+                code.html.
+                    &lt;button id="pay"&gt;Купить&lt;/button &gt;
+
+    article.center.code-6
+        .wrapper
+            pre
+                code.js.
+                    const methodData = [{
+                        supportedMethods: "basic-card",
+                    }];
+
+    article.center.code-2
+        .wrapper
+            pre
+                code.js.
+                    const details = {
+                      id: "order-1",
+                      displayItems: [{
+                        label: "Уточка",
+                        amount: {
+                          currency: "USD",
+                          value: "5.00"
+                        },
+                      },
+    article.center.code-2
+        .wrapper
+            pre
+                code.js.
+                      {
+                        label: "Cвинка",
+                        amount: {
+                          currency: "USD",
+                          value: "3.00"
+                        },
+                      }],
+
+    article.center.code-2
+        .wrapper
+            pre
+                code.js.
+                      total: {
+                        label: "Всего",
+                        amount: {
+                          currency: "USD",
+                          value: "8.00"
+                        },
+                      },
+                    };
+
+
+    article.center.code-2
+        .wrapper
+            pre
+                code.js.
+                    const options = {
+                      requestPayerEmail: true,
+                      requestPayerName: true,
+                      requestPayerPhone: true,
+                      requestShipping: false,
+                    }
+
+    article.center.code-2
+        .wrapper
+            pre
+                code.js.
+                    let request = new PaymentRequest(
+                        methodData,
+                        details,
+                        options);
+
+
+    article.center.code-2
+        .wrapper
+            pre
+                code.js.
+                    const button = document.getElementById('pay');
+                    button.addEventListener('click', pay);
+
+    article.center.code-2
+        .wrapper
+            pre
+                code.js.
+                    const pay = async function () {
+                        const response = await request.show();
+                        await response.complete(validate());
+                        …
+                    };
+
+    article.center.code-2
+        .wrapper
+            pre
+                code.json.
+                    {
+                        details: {},
+                        methodName: "basic-card",
+                        payerEmail: "thesilentimp@gmail.com",
+                        payerName: "Anton",
+                        payerPhone: "+380502773882",
+                        requestId: "order-1",
+                        shippingAddress: null,
+                        shippingOption: null,
+                    }
+
     article.screen.screen--bcp.overlay
         .overlay__abstract.overlay__abstract--right
             h3.overlay__title Basic Card Payment

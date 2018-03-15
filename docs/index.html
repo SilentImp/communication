@@ -12,4 +12,104 @@
     name="cc-number"
     type="text"
     placeholder="Город" /&gt;
-</code></pre></div></article><article class="screen screen--autofill-settings"></article><article class="screen screen--wpwg overlay"><div class="overlay__abstract overlay__abstract--right"><h3 class="overlay__title">Web payments working group</h3><img class="overlay__qr" src="images/qr-w3-org.svg" alt="QRCODE cо ссылкой"><p><a class="overlay__link" href="https://www.w3.org/Payments/WG" data-click>https://www.w3.org/Payments/WG</a></p></div></article><article class="screen screen--overview overlay"><div class="overlay__abstract overlay__abstract--right"><h3 class="overlay__title">Web Payments Overview 1.0</h3><img class="overlay__qr" src="images/wpo.svg" alt="QRCODE cо ссылкой"><p><a class="overlay__link" href="https://www.w3.org/TR/webpayments-overview/" data-click>https://www.w3.org/TR/webpayments-overview/</a></p></div></article><article class="screen screen--pra overlay"><div class="overlay__abstract overlay__abstract--right"><h3 class="overlay__title">Payment Request API</h3><img class="overlay__qr" src="images/pra.svg" alt="QRCODE cо ссылкой"><p><a class="overlay__link" href="https://www.w3.org/TR/payment-request/" data-click>https://www.w3.org/TR/payment-request/</a></p></div></article><article class="screen screen--can"></article><article class="screen screen--autofill-config"></article><article class="screen screen--bcp overlay"><div class="overlay__abstract overlay__abstract--right"><h3 class="overlay__title">Basic Card Payment</h3><img class="overlay__qr" src="images/bcp.svg" alt="QRCODE cо ссылкой"><p><a class="overlay__link" href="https://www.w3.org/TR/payment-method-basic-card/" data-click>https://www.w3.org/TR/payment-method-basic-card/</a></p></div></article><article class="screen screen--pmi overlay"><div class="overlay__abstract overlay__abstract--right"><h3 class="overlay__title">Payment Method Identifiers</h3><img class="overlay__qr" src="images/pmi.svg" alt="QRCODE cо ссылкой"><p><a class="overlay__link" href="https://www.w3.org/TR/payment-method-id/" data-click>https://www.w3.org/TR/payment-method-id/</a></p></div></article><article class="screen screen--pmm overlay"><div class="overlay__abstract overlay__abstract--right"><h3 class="overlay__title">Payment Method Manifest</h3><img class="overlay__qr" src="images/pmi.svg" alt="QRCODE cо ссылкой"><p><a class="overlay__link" href="https://www.w3.org/TR/payment-method-manifest/" data-click>https://www.w3.org/TR/payment-method-manifest/</a></p></div></article><article class="contacts center qrcode"><div class="wrapper"><div class="about-speaker half"><p class="name">Антон Немцев</p><p class="link">http://silentimp.info/</p><p class="twitter">@silentimp</p><p class="email">thesilentimp@gmail.com</p><p class="skype">skype: ravencry</p></div><div class="half"><img src="images/git.svg" alt="QRCODE cо ссылкой на доклад"></div><p><a href="https://github.com/SilentImp/LayoutTalk" data-click>https://goo.gl/y3lvfc</a></p></div></article></section></body></html>
+</code></pre></div></article><article class="screen screen--autofill-settings"></article><article class="screen screen--wpwg overlay"><div class="overlay__abstract overlay__abstract--right"><h3 class="overlay__title">Web payments working group</h3><img class="overlay__qr" src="images/qr-w3-org.svg" alt="QRCODE cо ссылкой"><p><a class="overlay__link" href="https://www.w3.org/Payments/WG" data-click>https://www.w3.org/Payments/WG</a></p></div></article><article class="screen screen--overview overlay"><div class="overlay__abstract overlay__abstract--right"><h3 class="overlay__title">Web Payments Overview 1.0</h3><img class="overlay__qr" src="images/wpo.svg" alt="QRCODE cо ссылкой"><p><a class="overlay__link" href="https://www.w3.org/TR/webpayments-overview/" data-click>https://www.w3.org/TR/webpayments-overview/</a></p></div></article><article class="screen screen--pra overlay"><div class="overlay__abstract overlay__abstract--right"><h3 class="overlay__title">Payment Request API</h3><img class="overlay__qr" src="images/pra.svg" alt="QRCODE cо ссылкой"><p><a class="overlay__link" href="https://www.w3.org/TR/payment-request/" data-click>https://www.w3.org/TR/payment-request/</a></p></div></article><article class="screen screen--can"></article><article class="screen screen--autofill-config"></article><article class="example example--payment"><button type="button" id="pay">Купить</button><script>const methodData = [{
+    supportedMethods: "basic-card",
+}];
+const details = {
+  id: "order-1",
+  displayItems: [{
+    label: "Уточка",
+    amount: {
+      currency: "USD",
+      value: "5.00"
+    },
+  },{
+    label: "Cвинка",
+    amount: {
+      currency: "USD",
+      value: "3.00"
+    },
+  }],
+  total: {
+    label: "Всего",
+    amount: {
+      currency: "USD",
+      value: "8.00"
+    },
+  },
+};
+const options = {
+  requestPayerEmail: true,
+  requestPayerName: true,
+  requestPayerPhone: true,
+  requestShipping: false,
+}
+let request = new PaymentRequest(methodData, details, options);
+const button = document.getElementById('pay');
+const validate = function () {
+    return Math.round(Math.random()) === 1 ? 'success' : 'fail';
+}
+const check = async function () {
+    const response = await request.show();
+    console.log(response);
+    await response.complete(validate());
+    request = new PaymentRequest(methodData, details, options);
+};
+button.addEventListener('click', check);
+</script></article><article class="center"><div class="wrapper"><ul class="need"><li> methodData</li><li> details</li><li> methooptionsdData</li></ul></div></article><article class="center code-6"><div class="wrapper"><pre><code class="html">&lt;button id="pay"&gt;Купить&lt;/button &gt;
+</code></pre></div></article><article class="center code-6"><div class="wrapper"><pre><code class="js">const methodData = [{
+    supportedMethods: "basic-card",
+}];
+</code></pre></div></article><article class="center code-2"><div class="wrapper"><pre><code class="js">const details = {
+  id: "order-1",
+  displayItems: [{
+    label: "Уточка",
+    amount: {
+      currency: "USD",
+      value: "5.00"
+    },
+  },</code></pre></div></article><article class="center code-2"><div class="wrapper"><pre><code class="js">{
+  label: "Cвинка",
+  amount: {
+    currency: "USD",
+    value: "3.00"
+  },
+}],
+</code></pre></div></article><article class="center code-2"><div class="wrapper"><pre><code class="js">  total: {
+    label: "Всего",
+    amount: {
+      currency: "USD",
+      value: "8.00"
+    },
+  },
+};
+
+</code></pre></div></article><article class="center code-2"><div class="wrapper"><pre><code class="js">const options = {
+  requestPayerEmail: true,
+  requestPayerName: true,
+  requestPayerPhone: true,
+  requestShipping: false,
+}
+</code></pre></div></article><article class="center code-2"><div class="wrapper"><pre><code class="js">let request = new PaymentRequest(
+    methodData,
+    details,
+    options);
+
+</code></pre></div></article><article class="center code-2"><div class="wrapper"><pre><code class="js">const button = document.getElementById('pay');
+button.addEventListener('click', pay);
+</code></pre></div></article><article class="center code-2"><div class="wrapper"><pre><code class="js">const pay = async function () {
+    const response = await request.show();
+    await response.complete(validate());
+    …
+};
+</code></pre></div></article><article class="center code-2"><div class="wrapper"><pre><code class="json">{
+    details: {},
+    methodName: "basic-card",
+    payerEmail: "thesilentimp@gmail.com",
+    payerName: "Anton",
+    payerPhone: "+380502773882",
+    requestId: "order-1",
+    shippingAddress: null,
+    shippingOption: null,
+}
+</code></pre></div></article><article class="screen screen--bcp overlay"><div class="overlay__abstract overlay__abstract--right"><h3 class="overlay__title">Basic Card Payment</h3><img class="overlay__qr" src="images/bcp.svg" alt="QRCODE cо ссылкой"><p><a class="overlay__link" href="https://www.w3.org/TR/payment-method-basic-card/" data-click>https://www.w3.org/TR/payment-method-basic-card/</a></p></div></article><article class="screen screen--pmi overlay"><div class="overlay__abstract overlay__abstract--right"><h3 class="overlay__title">Payment Method Identifiers</h3><img class="overlay__qr" src="images/pmi.svg" alt="QRCODE cо ссылкой"><p><a class="overlay__link" href="https://www.w3.org/TR/payment-method-id/" data-click>https://www.w3.org/TR/payment-method-id/</a></p></div></article><article class="screen screen--pmm overlay"><div class="overlay__abstract overlay__abstract--right"><h3 class="overlay__title">Payment Method Manifest</h3><img class="overlay__qr" src="images/pmi.svg" alt="QRCODE cо ссылкой"><p><a class="overlay__link" href="https://www.w3.org/TR/payment-method-manifest/" data-click>https://www.w3.org/TR/payment-method-manifest/</a></p></div></article><article class="contacts center qrcode"><div class="wrapper"><div class="about-speaker half"><p class="name">Антон Немцев</p><p class="link">http://silentimp.info/</p><p class="twitter">@silentimp</p><p class="email">thesilentimp@gmail.com</p><p class="skype">skype: ravencry</p></div><div class="half"><img src="images/git.svg" alt="QRCODE cо ссылкой на доклад"></div><p><a href="https://github.com/SilentImp/LayoutTalk" data-click>https://goo.gl/y3lvfc</a></p></div></article></section></body></html>
