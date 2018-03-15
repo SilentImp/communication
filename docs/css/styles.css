@@ -833,7 +833,7 @@ html body section#slides article iframe.half:last-child {
   background-image: url("../images/grid-scheme.png");
 }
 .illustration--title {
-  background-image: url("../images/title.jpg");
+  background-image: url("../images/money.jpeg");
 }
 .illustration--debug {
   background-image: url("../images/debug.jpg");
@@ -1110,19 +1110,18 @@ article.cloud.cloud--title h1 {
   text-align: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-color: rgba(255,255,255,0.95);
+  background-color: #fff;
 }
 article.cloud.cloud--title h1 .wrapper {
-  font-size: 48px;
-  line-height: 56px;
+  font-size: 64px;
+  line-height: 72px;
   white-space: nowrap;
 }
 article.cloud.cloud--title h1:after {
-  display: none;
-  -webkit-transform: rotate(65deg);
-          transform: rotate(65deg);
-  -webkit-transform-origin: 10px -198px;
-          transform-origin: 10px -198px;
+  -webkit-transform: rotate(-130deg);
+          transform: rotate(-130deg);
+  -webkit-transform-origin: 10px -247px;
+          transform-origin: 10px -247px;
 }
 article.cloud.cloud--debug h1 {
   width: 350px;
