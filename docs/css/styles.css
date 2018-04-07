@@ -886,6 +886,9 @@ ul.need li {
 .screen--stripe-delawer {
   background-image: url("../images/delawer.png");
 }
+.screen--moto {
+  background-image: url("../images/moto.png");
+}
 .screen--stripe-atlas {
   background-image: url("../images/atlas.png");
 }
