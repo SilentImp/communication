@@ -883,6 +883,67 @@ ul.need li {
   bottom: 100px;
   right: 200px;
 }
+.screen--stripe-delawer {
+  background-image: url("../images/delawer.png");
+}
+.screen--stripe-atlas {
+  background-image: url("../images/atlas.png");
+}
+.screen--stripe-product {
+  background-image: url("../images/sp.png");
+}
+.screen--stripe {
+  background-image: url("../images/stripe.svg");
+  background-size: 80% auto;
+}
+.screen--ap1 {
+  background-image: url("../images/ap1.png");
+}
+.screen--ap2 {
+  background-image: url("../images/ap2.png");
+}
+.screen--gp1 {
+  background-image: url("../images/gp1.jpg");
+}
+.screen--gp2 {
+  background-image: url("../images/gp2.jpg");
+}
+.screen--gp3 {
+  background-image: url("../images/gp3.png");
+}
+.screen--s1 {
+  background-image: url("../images/s1.png");
+}
+.screen--s2 {
+  background-image: url("../images/s2.png");
+}
+.screen--s3 {
+  background-image: url("../images/s3.png");
+}
+.screen--s4 {
+  background-image: url("../images/s4.png");
+}
+.screen--s5 {
+  background-image: url("../images/s5.png");
+}
+.screen--appay {
+  background-image: url("../images/safari.png");
+}
+.screen--auth {
+  background-image: url("../images/auth.png");
+}
+.screen--cred {
+  background-image: url("../images/cred.png");
+}
+.screen--passwords {
+  background-image: url("../images/passwords.png");
+}
+.screen--creds {
+  background-image: url("../images/creds.png");
+}
+.screen--usecreds {
+  background-image: url("../images/usecreds.png");
+}
 .screen--autofill-config {
   background-image: url("../images/config.png");
 }
@@ -1070,6 +1131,10 @@ h3.overlay__title {
 h4.overlay__title {
   font-size: 36px;
   line-height: 42px;
+}
+h5.overlay__title {
+  font-size: 28px;
+  line-height: 36px;
 }
 .overlay__qr {
   margin: 20px 0;
