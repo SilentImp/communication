@@ -883,6 +883,9 @@ ul.need li {
   bottom: 100px;
   right: 200px;
 }
+.screen--letter {
+  background-image: url("../images/letter.png");
+}
 .screen--stripe-delawer {
   background-image: url("../images/delawer.png");
 }
