@@ -1,1493 +1,697 @@
 extends ./partials/layout.jade
 
 block title
-    title Payment Request API
+    title Комуникация с фронтендерами
 
 block slides
 
     article.illustration.illustration--title.cloud.cloud--title
         h1
-            p.wrapper Make
+            p.wrapper Как приручить
                 br
-                | checkout
+                | фронтендера
+
+    article.illustration.illustration--frontender.cloud.cloud--frontender
+        h1
+            p.wrapper И кто же
                 br
-                | great again
+                | он такой?
 
-    article.screen.screen--checkout-desktop
+    article.illustration.illustration--calendar.cloud.cloud--calendar
+        h1
+            p.wrapper Рабочий
+                br
+                | День
 
-    article.screen.screen--checkout-mobile
+    article.illustration.illustration--frontender-1.cloud.cloud--frontender-x
+        h1
+            p.wrapper Читаю
+                br
+                | почту
 
-    article.screen.screen--s1
+    article.illustration.illustration--frontender-2.cloud.cloud--frontender-x
+        h1
+            p.wrapper Делаю
+                br
+                | код ревью
 
-    article.screen.screen--s2
+    article.illustration.illustration--frontender-1.cloud.cloud--frontender-x
+        h1
+            p.wrapper Митинг
 
-    article.screen.screen--s3
+    article.illustration.illustration--frontender-3.cloud.cloud--frontender-x
+        h1
+            p.wrapper Работаю
 
-    article.screen.screen--s4
+    article.illustration.illustration--frontender-2.cloud.cloud--frontender-x
+        h1
+            p.wrapper Яростно
+                br
+                | работаю
 
-    article.screen.screen--s5
+    article.illustration.illustration--dumb.cloud.cloud--dumb
+        h1
+            p.wrapper Зачем с нами
+                br
+                | говорить?
 
-    article.screen.screen--autofill.overlay
+    article.illustration.illustration--dumb.cloud.cloud--dumb
+        h1
+            p.wrapper НАСЯ-ЯЛЬНИКА…
+
+    article.center.list
+        .wrapper
+            h1 Мы должны понимать
+            ul
+                li Зачем это нужно
+                li Как это должно работать
+                li Какие есть логические и
+                    br
+                    | структурные блоки
+
+
+    article.center.list
+        .wrapper
+            h1 Хороший макет
+            ul
+                li Векторный
+                li Включает структуру
+                li Содержит состояния
+                li Содержит примечания
+
+    article.center.list
+        .wrapper
+            h1 Хороший макет
+            ul
+                li Исключает скрытые слои
+                li Доступен для редактирования
+                li Стандартизирован, KISS и DRY
+
+    article.center.list-2
+        .wrapper
+            h1 Жизнеутверждающая задача включает
+            ul
+                li Блок-схему
+                li Описание логики
+                li Описание источников данных
+                li Описание анимаций
+
+    article.illustration.illustration--rule.cloud.cloud--rule
+        h1
+            p.wrapper Фронтендеров
+                br
+                | надо тискать
+
+
+    article.illustration.illustration--system.cloud.cloud--system
+        h1
+            p.wrapper Примеры
+                br
+                | систем
+
+    article.screen.screen--quark.overlay
         .overlay__abstract.overlay__abstract--right
-            h3.overlay__title Autofill
-            img.overlay__qr(src="images/autofill.svg", alt="QRCODE cо ссылкой")
+            h3.overlay__title QUARK
+            img.overlay__qr(src="images/quark.svg", alt="QRCODE cо ссылкой")
             p
-                a.overlay__link(href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill", data-click=true) https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill
+                a.overlay__link(href="http://design.templatemonster.com/quark/", data-click=true) http://design.templatemonster.com/quark/
 
-    article.example.example--autofill
-        form(action="/")
-            fieldset
-                legend  Адрес доставки
-                input(name="filed1" type="text" placeholder="Страна")
-                input(name="filed2" type="text" placeholder="Гoрoд")
-                input(name="filed3" type="text" placeholder="Улица")
-            fieldset
-                legend  Контакты
-                input(name="tel" type="tel" placeholder="Телефон")
-                input(name="email" type="email" placeholder="Email")
-            fieldset
-                legend  Платежная карта
-                input(name="cfc-number" type="text" placeholder="Номер")
-                input(name="cfc-name" type="text" placeholder="Владелец")
-                input(name="cfc-exp" type="text" placeholder="Годна до")
-                input(name="cfc-csc" type="text" placeholder="CVC")
-
-    article.example.example--autofill
-        form(action="/")
-            fieldset
-                legend  Адрес доставки
-                input(autocomplete="country-name" name="country-name" type="text" placeholder="Страна")
-                input(autocomplete="address-level2" name="address-level2" type="text" placeholder="Город")
-                input(autocomplete="street-address" name="street-address" type="text" placeholder="Адрес")
-            fieldset
-                legend  Контакты
-                input(autocomplete="tel" name="tel" type="tel" placeholder="Телефон")
-                input(autocomplete="email" name="email" type="email" placeholder="Email")
-            fieldset
-                legend  Платежная карта
-                input(autocomplete="cc-number" name="cc-number" type="text" placeholder="Номер")
-                input(autocomplete="cc-name" name="cc-name" type="text" placeholder="Владелец")
-                input(autocomplete="cc-exp" name="cc-exp" type="text" placeholder="Годна до")
-                input(autocomplete="cc-csc" name="cc-csc" type="text" placeholder="CVC")
-
-    article.center.code-6
-            pre
-                code.html.
-                    &lt;input
-                        autocomplete="street-address"
-                        name="street-address"
-                        type="text"
-                        placeholder="Адрес" /&gt;
-    article.center.code-6
-        .wrapper
-            pre
-                code.html.
-                    &lt;input
-                        autocomplete="address-level2"
-                        name="address-level2"
-                        type="text"
-                        placeholder="Номер карты" /&gt;
-
-    article.center.code-6
-        .wrapper
-            pre
-                code.html.
-                    &lt;input
-                        autocomplete="cc-number"
-                        name="cc-number"
-                        type="text"
-                        placeholder="Город" /&gt;
-
-    article.screen.screen--autofill-settings
-
-    //- article.example.frames
-    //-     iframe(src="examples/credentials/index.html")
-
-    article.screen.screen--cred.overlay
+    article.screen.screen--material.overlay
         .overlay__abstract.overlay__abstract--right
-            h3.overlay__title Credential Management Level 1
-            img.overlay__qr(src="images/cred.svg", alt="QRCODE cо ссылкой")
+            h3.overlay__title Material Design
+            img.overlay__qr(src="images/material.svg", alt="QRCODE cо ссылкой")
             p
-                a.overlay__link(href="https://w3.org/TR/credential-management-1/", data-click=true) https://w3.org/TR/credential-management-1/
+                a.overlay__link(href="https://material.io/", data-click=true) https://material.io/
 
-    article.screen.screen--auth.overlay
-        .overlay__abstract.overlay__abstract--left
-            h5.overlay__title Web Authentication: An API for accessing Public Key Credentials Level 1
-            img.overlay__qr(src="images/auth.svg", alt="QRCODE cо ссылкой")
-            p
-                a.overlay__link(href="https://w3.org/TR/webauthn/", data-click=true) https://w3.org/TR/webpayments-overview/
-
-    article.screen.screen--creds
-
-    article.center.code-6
-        .wrapper
-            pre
-                code.js.
-                    if (window.PasswordCredential) {
-                        //…
-                    }
-
-    article.center.code-6
-        .wrapper
-            pre
-                code.js.
-                    navigator.credentials.get({
-                            password: true,
-                            mediation: 'optional',
-                        }).then({…});
-
-    article.center
-        .wrapper
-            ul.need
-                li  required
-                li  optional
-                li  silent
-
-    article.center.code-6
-        .wrapper
-            pre
-                code.js.
-                    navigator
-                        .credentials
-                            .preventSilentAccess();
-    article.center.code-0
-        .wrapper
-            pre
-                code.js.
-                    navigator.credentials.get({…})
-                        .then(credential => {
-                            if (credential) {
-                                // credential.password
-                                // credential.id
-                            }
-                        });
-
-    article.screen.screen--passwords
-
-    article.screen.screen--usecreds
-
-    article.screen.screen--wpwg.overlay
+    article.screen.screen--bootstrap.overlay
         .overlay__abstract.overlay__abstract--right
-            h3.overlay__title Web payments working group
-            img.overlay__qr(src="images/qr-w3-org.svg", alt="QRCODE cо ссылкой")
+            h3.overlay__title Bootstrap
+            img.overlay__qr(src="images/bootstrap.svg", alt="QRCODE cо ссылкой")
             p
-                a.overlay__link(href="https://www.w3.org/Payments/WG", data-click=true) https://www.w3.org/Payments/WG
+                a.overlay__link(href="https://getbootstrap.com/", data-click=true) https://getbootstrap.com/
 
-    article.screen.screen--overview.overlay
+    article.illustration.illustration--education.cloud.cloud--education
+        h1
+            p.wrapper Где узнать
+                br
+                | больше?
+
+    article.screen.screen--ft.overlay
         .overlay__abstract.overlay__abstract--right
-            h3.overlay__title Web Payments Overview 1.0
-            img.overlay__qr(src="images/wpo.svg", alt="QRCODE cо ссылкой")
+            h3.overlay__title Front Trends
+            img.overlay__qr(src="images/ft.svg", alt="QRCODE cо ссылкой")
             p
-                a.overlay__link(href="https://www.w3.org/TR/webpayments-overview/", data-click=true) https://www.w3.org/TR/webpayments-overview/
+                a.overlay__link(href="https://www.youtube.com/channel/UCpIBwBITpXelDgDwe-16zWA/videos", data-click=true) https://goo.gl/56jkfC
 
-
-    article.screen.screen--pra.overlay
+    article.book.book--brief.illustration.illustration--books.overlay
         .overlay__abstract.overlay__abstract--right
-            h3.overlay__title Payment Request API
-            img.overlay__qr(src="images/pra.svg", alt="QRCODE cо ссылкой")
+            h3.overlay__title A Book A Part
+            img.overlay__qr(src="images/abookapart.svg", alt="QRCODE cо ссылкой")
             p
-                a.overlay__link(href="https://www.w3.org/TR/payment-request/", data-click=true) https://www.w3.org/TR/payment-request/
-
-    article.screen.screen--appay.overlay
-        .overlay__abstract.overlay__abstract--right
-            h4.overlay__title Introducing the Payment Request API for Apple Pay
-            img.overlay__qr(src="images/appay.svg", alt="QRCODE cо ссылкой")
-            p
-                a.overlay__link(href="https://webkit.org/blog/8182/introducing-the-payment-request-api-for-apple-pay/", data-click=true) https://webkit.org/blog/8182/introducing-the-payment-request-api-for-apple-pay/
-
-    article.screen.screen--autofill-config
-
-    article.screen.screen--can
-
-    article.example.example--payment
-        button(type="button" id="pay") Купить
-        script.
-            const methodData = [{
-                supportedMethods: "basic-card",
-            }];
-            const details = {
-              id: "order-1",
-              displayItems: [{
-                label: "Вотлшебный Говорящий Медведь-Проститутка",
-                amount: {
-                  currency: "USD",
-                  value: "5.00"
-                },
-              },{
-                label: "Cвинка",
-                amount: {
-                  currency: "USD",
-                  value: "3.00"
-                },
-              }],
-              total: {
-                label: "Всего",
-                amount: {
-                  currency: "USD",
-                  value: "8.00"
-                },
-              },
-            };
-            const options = {
-              requestPayerEmail: true,
-              requestPayerName: true,
-              requestPayerPhone: true,
-              requestShipping: false,
-            }
-            let request = new PaymentRequest(methodData, details, options);
-            const button = document.getElementById('pay');
-            const validate = function () {
-                return Math.round(Math.random()) === 1 ? 'success' : 'fail';
-            }
-            const check = async function () {
-                try {
-                    const response = await request.show();
-                    console.log(response);
-                    await response.complete(validate());
-                } catch (error) {}
-                request = new PaymentRequest(methodData, details, options);
-            };
-            button.addEventListener('click', check);
-
-    article.center
-        .wrapper
-            ul.need
-                li  methodData
-                li  details
-                li  methooptionsdData
-
-    article.center.code-6
-        .wrapper
-            pre
-                code.html.
-                    &lt;button id="pay"&gt;Купить&lt;/button &gt;
-
-    article.center.code-6
-        .wrapper
-            pre
-                code.js.
-                    const methodData = [{
-                        supportedMethods: "basic-card",
-                    }];
-
-    article.center.code-3
-        .wrapper
-            pre
-                code.js.
-                    const methodData = [{
-                        supportedMethods: "https://apple.com/apple-pay",
-                        data: {
-                            version: 3,
-                            merchantIdentifier: "merchant.com.example",
-                            merchantCapabilities: [
-                                "supports3DS",
-                                "supportsCredit",
-                                "supportsDebit"],
-                            supportedNetworks: ["amex", "discover", "masterCard", "visa"],
-                            countryCode: "US",
-                        },
-                    }];
-
-    article.center.code-2
-        .wrapper
-            pre
-                code.js.
-                    const details = {
-                      id: "order-1",
-                      displayItems: [{
-                        label: "Вотлшебный Говорящий Медведь-Проститутка",
-                        amount: {
-                          currency: "USD",
-                          value: "5.00"
-                        },
-                      },
-    article.center.code-1
-        .wrapper
-            pre
-                code.js.
-                      {
-                        label: "Cвинка",
-                        amount: {
-                          currency: "USD",
-                          value: "3.00"
-                        },
-                      }],
-    article.center.code-1
-        .wrapper
-            pre
-                code.js.
-                      total: {
-                        label: "Всего",
-                        amount: {
-                          currency: "USD",
-                          value: "8.00"
-                        },
-                      },
-                    };
-    article.center.code-0
-        .wrapper
-            pre
-                code.js.
-                    const options = {
-                      requestPayerEmail: true,
-                      requestPayerName: true,
-                      requestPayerPhone: true,
-                      requestShipping: false,
-                    };
-
-    article.center.code-6
-        .wrapper
-            pre
-                code.js.
-                    let request = new PaymentRequest(
-                        methodData,
-                        details,
-                        options);
-    article.center.code-1
-        .wrapper
-            pre
-                code.js.
-                    const button = document.getElementById('pay');
-                    button.addEventListener('click', pay);
-
-    article.center.code-1
-        .wrapper
-            pre
-                code.js.
-                    const pay = async function () {
-                        const response = await request.show();
-                        await response.complete(validate());
-                        …
-                    };
-
-    article.center.code-2
-        .wrapper
-            pre
-                code.json.
-                    {
-                        details: {},
-                        methodName: "basic-card",
-                        payerEmail: "thesilentimp@gmail.com",
-                        payerName: "Anton",
-                        payerPhone: "+380502773882",
-                        requestId: "order-1",
-                        shippingAddress: null,
-                        shippingOption: null,
-                    }
-
-    article.screen.screen--bcp.overlay
-        .overlay__abstract.overlay__abstract--right
-            h3.overlay__title Basic Card Payment
-            img.overlay__qr(src="images/bcp.svg", alt="QRCODE cо ссылкой")
-            p
-                a.overlay__link(href="https://www.w3.org/TR/payment-method-basic-card/", data-click=true) https://www.w3.org/TR/payment-method-basic-card/
-
-    article.screen.screen--pmi.overlay
-        .overlay__abstract.overlay__abstract--right
-            h3.overlay__title Payment Method Identifiers
-            img.overlay__qr(src="images/pmi.svg", alt="QRCODE cо ссылкой")
-            p
-                a.overlay__link(href="https://www.w3.org/TR/payment-method-id/", data-click=true) https://www.w3.org/TR/payment-method-id/
-
-    article.screen.screen--pmm.overlay
-        .overlay__abstract.overlay__abstract--right
-            h3.overlay__title Payment Method Manifest
-            img.overlay__qr(src="images/pmi.svg", alt="QRCODE cо ссылкой")
-            p
-                a.overlay__link(href="https://www.w3.org/TR/payment-method-manifest/", data-click=true) https://www.w3.org/TR/payment-method-manifest/
-
-    article.screen.screen--stripe
-
-    article.screen.screen--stripe-atlas
-
-    article.screen.screen--stripe-delawer
-
-    article.screen.screen--stripe-product
-
-    //- article.screen.screen--moto
-
-    article.screen.screen--moto.overlay
-        .overlay__abstract.overlay__abstract--right
-            h3.overlay__title MOTO.COURSES
-            img.overlay__qr(src="images/motoc.svg", alt="QRCODE cо ссылкой")
-            p
-                a.overlay__link(href="https://moto.courses/", data-click=true) https://moto.courses/
-            p
-                a.overlay__link(href="https://github.com/SilentImp/moto.courses", data-click=true) https://github.com/SilentImp/moto.courses
+                a.overlay__link(href="https://abookapart.com/", data-click=true) https://abookapart.com/
 
 
-    article.center.code-0
-        .wrapper
-            pre
-                code.html.
-                    &lt;script src="https://js.stripe.com/v3/"></script>
 
 
-    article.center.code-0
-        .wrapper
-            pre
-                code.js.
-                    if (Stripe !== undefined) {
-                        const stripe = Stripe('pk_cQQjittH');
-                        // …
-                    }
-
-    article.center.code-6
-        .wrapper
-            pre
-                code.js.
-                    const items = [{
-                        amount: 4000
-                        , label: 'maintenance.course'
-                    }];
-
-    article.center.code-3
-        .wrapper
-            pre
-                code.js.
-                    const paymentRequest = stripe.paymentRequest({
-                      country: 'US'
-                      , currency: 'uah'
-                      , requestPayerName: true
-                      , requestPayerEmail: true
-                      , requestPayerPhone: true
-                      , requestShipping: false
-                      , displayItems: items
-                      , total: {
-                        label: 'Мастеркласс'
-                        , amount: 4000
-                      }});
-
-    article.center.code-0
-        .wrapper
-            pre
-                code.js.
-                  const elements = stripe.elements();
-                    const prButton = elements.create(
-                      'paymentRequestButton',
-                      { paymentRequest }
-                    );
-
-    article.center.code-0
-        .wrapper
-            pre
-                code.js.
-                    const response = await fetch('/skus');
-                    const sku = await response.json();
-
-    article.center.code-2
-        .wrapper
-            pre
-                code.js.
-                    const stripe = require('stripe')('sku_CckkusdfZ');
-                    stripe.skus.retrieve('sku_CckkusdfZ',
-                      (error, sku) => {
-                        if (error === null) {
-                          res.send(JSON.stringify(sku)).status(200).end();
-                        } else {
-                          res.status(error.statusCode, error.message)
-                            .end(http.STATUS_CODES[error.statusCode]);
-                        }});
-
-    article.center.code-2
-        .wrapper
-            pre
-                code.js.
-                    const result = await paymentRequest.canMakePayment();
-                    if (result) {
-                        prButton.mount('#payment-request-button');
-                    } else {
-                        // …
-                    }
-
-    article.center.code-2
-        .wrapper
-            pre
-                code.js.
-                    paymentRequest.on('token', async (event) => {
-                        const { token } = event;
-                        const response = await fetch('/order', {
-                            method: 'POST'
-                            , body: JSON.stringify({ token, sku })
-                            , headers: {'content-type': 'application/json'}
-                        });
-                    });
-
-    article.center.code-2
-        .wrapper
-            pre
-                code.js.
-                    const order = await stripe.orders.create({
-                      email: token.email
-                      , currency: sku.currency
-                      , items: [{
-                          type: 'sku'
-                          , parent: sku.id
-                        }]});
-
-
-    article.center.code-2
-        .wrapper
-            pre
-                code.js.
-                    const paidOrder = await stripe.orders.pay(order.id, {
-                      source: (token.livemode ? token.id : 'tok_visa'),
-                    });
-
-                    const fulfilledOrder = await stripe.orders
-                        .update(order.id, {
-                          status: 'fulfilled'
-                        });
-
-                    res.send(JSON.stringify(fulfilledOrder))
-                        .status(200).end();
-
-    article.screen.screen--letter
-
-    article.screen.screen--ap1
-
-    article.screen.screen--gp1
-
-    article.screen.screen--gp2
-
-    article.screen.screen--gp3
-
-
-    //- article.book.book--full.illustration.illustration--garden.overlay
+    //- article.screen.screen--checkout-desktop
+    //-
+    //- article.screen.screen--checkout-mobile
+    //-
+    //- article.screen.screen--s1
+    //-
+    //- article.screen.screen--s2
+    //-
+    //- article.screen.screen--s3
+    //-
+    //- article.screen.screen--s4
+    //-
+    //- article.screen.screen--s5
+    //-
+    //- article.screen.screen--autofill.overlay
     //-     .overlay__abstract.overlay__abstract--right
-    //-         h1.overlay__title Grid Garden
-    //-         img.overlay__qr(src="images/garden.svg", alt="QRCODE cо ссылкой")
+    //-         h3.overlay__title Autofill
+    //-         img.overlay__qr(src="images/autofill.svg", alt="QRCODE cо ссылкой")
     //-         p
-    //-             a.overlay__link(href="http://cssgridgarden.com/", data-click=true) http://cssgridgarden.com/
+    //-             a.overlay__link(href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill", data-click=true) https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill
     //-
-    //- article.book.book--full.screen.screen--cssgridio.overlay
-    //-     .overlay__abstract.overlay__abstract--right
-    //-         h3.overlay__title CSS Grid with Wes Bos
-    //-         img.overlay__qr(src="images/cssgridio.svg", alt="QRCODE cо ссылкой")
-    //-         p
-    //-             a.overlay__link(href="https://cssgrid.io/", data-click=true) https://cssgrid.io/
+    //- article.example.example--autofill
+    //-     form(action="/")
+    //-         fieldset
+    //-             legend  Адрес доставки
+    //-             input(name="filed1" type="text" placeholder="Страна")
+    //-             input(name="filed2" type="text" placeholder="Гoрoд")
+    //-             input(name="filed3" type="text" placeholder="Улица")
+    //-         fieldset
+    //-             legend  Контакты
+    //-             input(name="tel" type="tel" placeholder="Телефон")
+    //-             input(name="email" type="email" placeholder="Email")
+    //-         fieldset
+    //-             legend  Платежная карта
+    //-             input(name="cfc-number" type="text" placeholder="Номер")
+    //-             input(name="cfc-name" type="text" placeholder="Владелец")
+    //-             input(name="cfc-exp" type="text" placeholder="Годна до")
+    //-             input(name="cfc-csc" type="text" placeholder="CVC")
     //-
-    //- article.screen.screen--quick.overlay
-    //-     .overlay__abstract.overlay__abstract--right
-    //-         h4.overlay__title Here's a Super Quick Way to Try out CSS Grid
-    //-         img.overlay__qr(src="images/quick.svg", alt="QRCODE cо ссылкой")
-    //-         p
-    //-             a.overlay__link(href="http://jensimmons.com/post/aug-15-2017/heres-super-quick-way-try-out-css-grid", data-click=true) http://jensimmons.com/post/aug-15-2017/heres-super-quick-way-try-out-css-grid
+    //- article.example.example--autofill
+    //-     form(action="/")
+    //-         fieldset
+    //-             legend  Адрес доставки
+    //-             input(autocomplete="country-name" name="country-name" type="text" placeholder="Страна")
+    //-             input(autocomplete="address-level2" name="address-level2" type="text" placeholder="Город")
+    //-             input(autocomplete="street-address" name="street-address" type="text" placeholder="Адрес")
+    //-         fieldset
+    //-             legend  Контакты
+    //-             input(autocomplete="tel" name="tel" type="tel" placeholder="Телефон")
+    //-             input(autocomplete="email" name="email" type="email" placeholder="Email")
+    //-         fieldset
+    //-             legend  Платежная карта
+    //-             input(autocomplete="cc-number" name="cc-number" type="text" placeholder="Номер")
+    //-             input(autocomplete="cc-name" name="cc-name" type="text" placeholder="Владелец")
+    //-             input(autocomplete="cc-exp" name="cc-exp" type="text" placeholder="Годна до")
+    //-             input(autocomplete="cc-csc" name="cc-csc" type="text" placeholder="CVC")
     //-
-    //- article.screen.screen--layoutLandYouTube.overlay
-    //-     .overlay__abstract.overlay__abstract--right
-    //-         h3.overlay__title Layout Land YouTube
-    //-         img.overlay__qr(src="images/layoutLandYouTube.svg", alt="QRCODE cо ссылкой")
-    //-         p
-    //-             a.overlay__link(href="https://www.youtube.com/channel/UC7TizprGknbDalbHplROtag", data-click=true) https://www.youtube.com/
-    //-                 br
-    //-                 | channel/UC7TizprGknbDalbHplROtag
-    //-
-    //-
-    //- article.screen.screen--layoutLand.overlay
-    //-     .overlay__abstract.overlay__abstract--right
-    //-         h1.overlay__title Layout Land
-    //-         img.overlay__qr(src="images/layoutLand.svg", alt="QRCODE cо ссылкой")
-    //-         p
-    //-             a.overlay__link(href="http://www.layout.land/", data-click=true) http://www.layout.land/
-    //-
-    //- article.book.book--full.illustration.illustration--simmons.overlay
-    //-     img.simmons--tweet(src="images/tweet.png", alt="Tweet")
-    //-     .overlay__abstract
-    //-         h1.overlay__title Jen Simmons
-    //-         img.overlay__qr(src="images/simmons.svg", alt="QRCODE cо ссылкой")
-    //-         p
-    //-             a.overlay__link(href="http://jensimmons.com/", data-click=true) http://jensimmons.com/
-    //-
-    //-
-    //- article.book.book--full.illustration.illustration--yt.overlay
-    //-     .overlay__abstract
-    //-         h4.overlay__title Start Using CSS Grid Layouts Today
-    //-         img.overlay__qr(src="images/yt.svg", alt="QRCODE cо ссылкой")
-    //-         p
-    //-             a.overlay__link(href="https://www.youtube.com/watch?v=tjHOLtouElA", data-click=true) https://www.youtube.com/watch?v=tjHOLtouElA
-    //-
-    //- article.screen.screen--ex.overlay
-    //-     .overlay__abstract.overlay__abstract--right
-    //-         h4.overlay__title Grid by Example
-    //-         img.overlay__qr(src="images/ex.svg", alt="QRCODE cо ссылкой")
-    //-         p
-    //-             a.overlay__link(href="https://gridbyexample.com/", data-click=true) https://gridbyexample.com/
-    //-
-    //- article.book.book--brief.illustration.illustration--brief.overlay
-    //-     .overlay__abstract.overlay__abstract--right
-    //-         h3.overlay__title GET READY FOR CSS GRID LAYOUT
-    //-         img.overlay__qr(src="images/getready.svg", alt="QRCODE cо ссылкой")
-    //-         p
-    //-             a.overlay__link(href="https://abookapart.com/products/get-ready-for-css-grid-layout", data-click=true) https://abookapart.com/products/get-ready-for-css-grid-layout
-    //-
-    //-
-    //- article.book.book--full.illustration.illustration--full.overlay
-    //-     .overlay__abstract.overlay__abstract--right
-    //-         h2.overlay__title THE NEW CSS LAYOUT
-    //-         img.overlay__qr(src="images/newlayout.svg", alt="QRCODE cо ссылкой")
-    //-         p
-    //-             a.overlay__link(href="https://abookapart.com/products/the-new-css-layout", data-click=true) https://abookapart.com/products/the-new-css-layout
-    //-
-    //- article.book.book--full.illustration.illustration--bugs.overlay
-    //-     .overlay__abstract
-    //-         h1.overlay__title Grid Bugs
-    //-         img.overlay__qr(src="images/bugs.svg", alt="QRCODE cо ссылкой")
-    //-         p
-    //-             a.overlay__link(href="https://github.com/rachelandrew/gridbugs", data-click=true) https://github.com/rachelandrew/gridbugs
-    //-
-    //- article.book.book--full.illustration.illustration--rachelandrew.overlay
-    //-     .overlay__abstract
-    //-         h1.overlay__title Rachel Andrew
-    //-         img.overlay__qr(src="images/rachelandrew.svg", alt="QRCODE cо ссылкой")
-    //-         p
-    //-             a.overlay__link(href="https://rachelandrew.co.uk/", data-click=true) https://rachelandrew.co.uk/
-    //-
-    //- article.screen.screen--cguide.overlay
-    //-     .overlay__abstract.overlay__abstract--right
-    //-         h3.overlay__title A Complete Guide to Grid
-    //-         img.overlay__qr(src="images/cguide.svg", alt="QRCODE cо ссылкой")
-    //-         p
-    //-             a.overlay__link(href="https://css-tricks.com/snippets/css/complete-guide-grid/", data-click=true) https://css-tricks.com/snippets/css/complete-guide-grid/
-    //-
-    //-
-    //- article.screen.screen--live.overlay
-    //-     .overlay__abstract.overlay__abstract--right
-    //-         h1.overlay__title CSS-LIVE
-    //-         img.overlay__qr(src="images/live.svg", alt="QRCODE cо ссылкой")
-    //-         p
-    //-             a.overlay__link(href="http://css-live.ru/tag/css3-grid-layout", data-click=true) http://css-live.ru/tag/css3-grid-layout
-    //-
-    //- //- article
-    //- //-     p поддержка
-    //-
-    //- article.screen.screen--support
-    //-
-    //- article.screen.screen--support-ie
-    //-
-    //- article.screen.screen--support-next.center.cloud.cloud--ie-next
-    //-     h1
-    //-         p.wrapper 17 октября
-    //-
-    //- //- article
-    //- //-     p свойства
-    //-
-    //- article.illustration.illustration--grid-scheme
-    //-
-    //- article.center.code-10
-    //-     .wrapper
+    //- article.center.code-6
     //-         pre
-    //-             code.css.
-    //-                 .container {
-    //-                     display: grid;
-    //-                 }
-    //-
-    //- article.center.code-1
+    //-             code.html.
+    //-                 &lt;input
+    //-                     autocomplete="street-address"
+    //-                     name="street-address"
+    //-                     type="text"
+    //-                     placeholder="Адрес" /&gt;
+    //- article.center.code-6
     //-     .wrapper
     //-         pre
     //-             code.html.
-    //-                 &lt;div class="container">
-    //-                     &lt;div class="item">&lt;!-- … -->&lt;/div>
-    //-                     &lt;div class="item">&lt;!-- … -->&lt;/div>
-    //-                     &lt;div class="item">&lt;!-- … -->&lt;/div>
-    //-                     &lt;!-- … -->
-    //-                     &lt;div class="item">&lt;!-- … -->&lt;/div>
-    //-                     &lt;div class="item">&lt;!-- … -->&lt;/div>
-    //-                 &lt;/div>
-    //-
-    //- article.example.example--base-1
-    //-     .container
-    //-         .item 1
-    //-         .item 2
-    //-         .item 3
-    //-         .item 4
-    //-         .item 5
-    //-         .item 6
-    //-         .item 7
-    //-         .item 8
-    //-         .item 9
-    //-         .item 10
-    //-         .item 11
-    //-         .item 12
-    //-         .item 13
-    //-         .item 14
-    //-         .item 15
-    //-         .item 16
+    //-                 &lt;input
+    //-                     autocomplete="address-level2"
+    //-                     name="address-level2"
+    //-                     type="text"
+    //-                     placeholder="Номер карты" /&gt;
     //-
     //- article.center.code-6
     //-     .wrapper
     //-         pre
-    //-             code.css.
-    //-                 .container {
-    //-                     display: grid;
-    //-                     grid-template-columns:
-    //-                         1fr 2fr 1fr 1fr;
-    //-                     grid-template-rows:
-    //-                         100px 1fr 1fr 100px;
-    //-                 }
+    //-             code.html.
+    //-                 &lt;input
+    //-                     autocomplete="cc-number"
+    //-                     name="cc-number"
+    //-                     type="text"
+    //-                     placeholder="Город" /&gt;
     //-
-    //- article.example.example--base-2
-    //-     .container
-    //-         .item 1
-    //-         .item 2
-    //-         .item 3
-    //-         .item 4
-    //-         .item 5
-    //-         .item 6
-    //-         .item 7
-    //-         .item 8
-    //-         .item 9
-    //-         .item 10
-    //-         .item 11
-    //-         .item 12
-    //-         .item 13
-    //-         .item 14
-    //-         .item 15
-    //-         .item 16
+    //- article.screen.screen--autofill-settings
     //-
-    //- article.example.example--base-1-flex
-    //-     .container
-    //-         .item 1
-    //-         .item 2
-    //-         .item 3
-    //-         .item 4
-    //-         .item 5
-    //-         .item 6
-    //-         .item 7
-    //-         .item 8
-    //-         .item 9
-    //-         .item 10
-    //-         .item 11
-    //-         .item 12
-    //-         .item 13
-    //-         .item 14
-    //-         .item 15
-    //-         .item 16
+    //- //- article.example.frames
+    //- //-     iframe(src="examples/credentials/index.html")
+    //-
+    //- article.screen.screen--cred.overlay
+    //-     .overlay__abstract.overlay__abstract--right
+    //-         h3.overlay__title Credential Management Level 1
+    //-         img.overlay__qr(src="images/cred.svg", alt="QRCODE cо ссылкой")
+    //-         p
+    //-             a.overlay__link(href="https://w3.org/TR/credential-management-1/", data-click=true) https://w3.org/TR/credential-management-1/
+    //-
+    //- article.screen.screen--auth.overlay
+    //-     .overlay__abstract.overlay__abstract--left
+    //-         h5.overlay__title Web Authentication: An API for accessing Public Key Credentials Level 1
+    //-         img.overlay__qr(src="images/auth.svg", alt="QRCODE cо ссылкой")
+    //-         p
+    //-             a.overlay__link(href="https://w3.org/TR/webauthn/", data-click=true) https://w3.org/TR/webpayments-overview/
+    //-
+    //- article.screen.screen--creds
     //-
     //- article.center.code-6
     //-     .wrapper
     //-         pre
-    //-             code.css.
-    //-                 .container {
-    //-                     display: grid;
-    //-                     grid-template-columns:
-    //-                         repeat(4, 1fr);
-    //-                     grid-template-rows:
-    //-                         100px auto 100px 100px;
+    //-             code.js.
+    //-                 if (window.PasswordCredential) {
+    //-                     //…
     //-                 }
-    //-
-    //- article.example.example--base-3
-    //-     .container
-    //-         .item 1
-    //-         .item 2
-    //-         .item 3
-    //-         .item 4
-    //-         .item 5
-    //-         .item 6
-    //-         .item 7
-    //-         .item 8
-    //-         .item 9
-    //-         .item 10
-    //-         .item 11
-    //-         .item 12
-    //-         .item 13
-    //-         .item 14
-    //-         .item 15
-    //-         .item 16
     //-
     //- article.center.code-6
     //-     .wrapper
     //-         pre
-    //-             code.css.
-    //-                 .container {
-    //-                     grid-template-columns:
-    //-                         repeat(
-    //-                             auto-fill,
-    //-                             minmax(200px, 1fr)
-    //-                         );
-    //-                 }
+    //-             code.js.
+    //-                 navigator.credentials.get({
+    //-                         password: true,
+    //-                         mediation: 'optional',
+    //-                     }).then({…});
     //-
-    //- article.example.example--base-15
-    //-     .viewport
-    //-         .container
-    //-             .item 1
-    //-             .item 2
-    //-             .item 3
-    //-             .item 4
-    //-
-    //- article.example.example--base-16
-    //-     .viewport
-    //-         .container
-    //-             .item 1
-    //-             .item 2
-    //-             .item 3
-    //-             .item 4
-    //-
-    //- article.example.example--base-17
-    //-     .viewport
-    //-         .container
-    //-             .item 1
-    //-             .item 2
-    //-             .item 3
-    //-             .item 4
+    //- article.center
+    //-     .wrapper
+    //-         ul.need
+    //-             li  required
+    //-             li  optional
+    //-             li  silent
     //-
     //- article.center.code-6
     //-     .wrapper
     //-         pre
-    //-             code.css.
-    //-                 .container {
-    //-                     grid-template:
-    //-                         1fr 50px 1fr 1fr /
-    //-                         100px 3fr 1fr 100px;
-    //-                 }
-    //-
-    //- article.example.example--base-14
-    //-     .container
-    //-         .item 1
-    //-         .item 2
-    //-         .item 3
-    //-         .item 4
-    //-         .item 5
-    //-         .item 6
-    //-         .item 7
-    //-         .item 8
-    //-         .item 9
-    //-         .item 10
-    //-         .item 11
-    //-         .item 12
-    //-         .item 13
-    //-         .item 14
-    //-         .item 15
-    //-         .item 16
-    //-
-    //- article.center.code-10
+    //-             code.js.
+    //-                 navigator
+    //-                     .credentials
+    //-                         .preventSilentAccess();
+    //- article.center.code-0
     //-     .wrapper
     //-         pre
-    //-             code.css.
-    //-                 .container {
-    //-                     grid-gap: 20px;
-    //-                 }
+    //-             code.js.
+    //-                 navigator.credentials.get({…})
+    //-                     .then(credential => {
+    //-                         if (credential) {
+    //-                             // credential.password
+    //-                             // credential.id
+    //-                         }
+    //-                     });
     //-
-    //- article.example.example--base-13
-    //-     .container
-    //-         .item 1
-    //-         .item 2
-    //-         .item 3
-    //-         .item 4
-    //-         .item 5
-    //-         .item 6
-    //-         .item 7
-    //-         .item 8
-    //-         .item 9
-    //-         .item 10
-    //-         .item 11
-    //-         .item 12
-    //-         .item 13
-    //-         .item 14
-    //-         .item 15
-    //-         .item 16
+    //- article.screen.screen--passwords
     //-
-    //- article.center.code-1
+    //- article.screen.screen--usecreds
+    //-
+    //- article.screen.screen--wpwg.overlay
+    //-     .overlay__abstract.overlay__abstract--right
+    //-         h3.overlay__title Web payments working group
+    //-         img.overlay__qr(src="images/qr-w3-org.svg", alt="QRCODE cо ссылкой")
+    //-         p
+    //-             a.overlay__link(href="https://www.w3.org/Payments/WG", data-click=true) https://www.w3.org/Payments/WG
+    //-
+    //- article.screen.screen--overview.overlay
+    //-     .overlay__abstract.overlay__abstract--right
+    //-         h3.overlay__title Web Payments Overview 1.0
+    //-         img.overlay__qr(src="images/wpo.svg", alt="QRCODE cо ссылкой")
+    //-         p
+    //-             a.overlay__link(href="https://www.w3.org/TR/webpayments-overview/", data-click=true) https://www.w3.org/TR/webpayments-overview/
+    //-
+    //-
+    //- article.screen.screen--pra.overlay
+    //-     .overlay__abstract.overlay__abstract--right
+    //-         h3.overlay__title Payment Request API
+    //-         img.overlay__qr(src="images/pra.svg", alt="QRCODE cо ссылкой")
+    //-         p
+    //-             a.overlay__link(href="https://www.w3.org/TR/payment-request/", data-click=true) https://www.w3.org/TR/payment-request/
+    //-
+    //- article.screen.screen--appay.overlay
+    //-     .overlay__abstract.overlay__abstract--right
+    //-         h4.overlay__title Introducing the Payment Request API for Apple Pay
+    //-         img.overlay__qr(src="images/appay.svg", alt="QRCODE cо ссылкой")
+    //-         p
+    //-             a.overlay__link(href="https://webkit.org/blog/8182/introducing-the-payment-request-api-for-apple-pay/", data-click=true) https://webkit.org/blog/8182/introducing-the-payment-request-api-for-apple-pay/
+    //-
+    //- article.screen.screen--autofill-config
+    //-
+    //- article.screen.screen--can
+    //-
+    //- article.example.example--payment
+    //-     button(type="button" id="pay") Купить
+    //-     script.
+    //-         const methodData = [{
+    //-             supportedMethods: "basic-card",
+    //-         }];
+    //-         const details = {
+    //-           id: "order-1",
+    //-           displayItems: [{
+    //-             label: "Вотлшебный Говорящий Медведь-Проститутка",
+    //-             amount: {
+    //-               currency: "USD",
+    //-               value: "5.00"
+    //-             },
+    //-           },{
+    //-             label: "Cвинка",
+    //-             amount: {
+    //-               currency: "USD",
+    //-               value: "3.00"
+    //-             },
+    //-           }],
+    //-           total: {
+    //-             label: "Всего",
+    //-             amount: {
+    //-               currency: "USD",
+    //-               value: "8.00"
+    //-             },
+    //-           },
+    //-         };
+    //-         const options = {
+    //-           requestPayerEmail: true,
+    //-           requestPayerName: true,
+    //-           requestPayerPhone: true,
+    //-           requestShipping: false,
+    //-         }
+    //-         let request = new PaymentRequest(methodData, details, options);
+    //-         const button = document.getElementById('pay');
+    //-         const validate = function () {
+    //-             return Math.round(Math.random()) === 1 ? 'success' : 'fail';
+    //-         }
+    //-         const check = async function () {
+    //-             try {
+    //-                 const response = await request.show();
+    //-                 console.log(response);
+    //-                 await response.complete(validate());
+    //-             } catch (error) {}
+    //-             request = new PaymentRequest(methodData, details, options);
+    //-         };
+    //-         button.addEventListener('click', check);
+    //-
+    //- article.center
+    //-     .wrapper
+    //-         ul.need
+    //-             li  methodData
+    //-             li  details
+    //-             li  methooptionsdData
+    //-
+    //- article.center.code-6
     //-     .wrapper
     //-         pre
     //-             code.html.
-    //-                 &lt;div class="container">
-    //-                     &lt;div class="item">&lt;!-- … -->&lt;/div>
-    //-                     &lt;div class="item">Второй&lt;/div>
-    //-                     &lt;div class="item item--first">Первый&lt;/div>
-    //-                     &lt;!-- … -->
-    //-                     &lt;div class="item">&lt;!-- … -->&lt;/div>
-    //-                     &lt;div class="item">&lt;!-- … -->&lt;/div>
-    //-                 &lt;/div>
+    //-                 &lt;button id="pay"&gt;Купить&lt;/button &gt;
     //-
-    //- article.example.example--base-4
-    //-     .container
-    //-         .item 1
-    //-         .item.item--second 3
-    //-         .item.item--first 2
-    //-         .item 4
-    //-         .item 5
-    //-         .item 6
-    //-         .item 7
-    //-         .item 8
-    //-         .item 9
-    //-         .item 10
-    //-         .item 11
-    //-         .item 12
-    //-         .item 13
-    //-         .item 14
-    //-         .item 15
-    //-         .item 16
-    //-
-    //- article.center.code-10
+    //- article.center.code-6
     //-     .wrapper
     //-         pre
-    //-             code.css.
-    //-                 .item--second {
-    //-                     order: -1;
-    //-                 }
-    //-
-    //- article.example.example--base-5
-    //-     .container
-    //-         .item 1
-    //-         .item.item--second 3
-    //-         .item.item--first 2
-    //-         .item 4
-    //-         .item 5
-    //-         .item 6
-    //-         .item 7
-    //-         .item 8
-    //-         .item 9
-    //-         .item 10
-    //-         .item 11
-    //-         .item 12
-    //-         .item 13
-    //-         .item 14
-    //-         .item 15
-    //-         .item 16
-    //-
-    //- article.center.code-1
-    //-     .wrapper
-    //-         pre
-    //-             code.css.
-    //-                 .item--first {
-    //-                     order: 1;
-    //-                 }
-    //-                 .item--second {
-    //-                     order: 2;
-    //-                 }
-    //-                 .item--first ~ .item {
-    //-                     order: 3;
-    //-                 }
-    //-
-    //- article.example.example--base-55
-    //-     .container
-    //-         .item 1
-    //-         .item.item--second 3
-    //-         .item.item--first 2
-    //-         .item 4
-    //-         .item 5
-    //-         .item 6
-    //-         .item 7
-    //-         .item 8
-    //-         .item 9
-    //-         .item 10
-    //-         .item 11
-    //-         .item 12
-    //-         .item 13
-    //-         .item 14
-    //-         .item 15
-    //-         .item 16
-    //-
-    //- article.center.code-1
-    //-     .wrapper
-    //-         pre
-    //-             code.html.
-    //-                 &lt;div class="container">
-    //-                     &lt;div class="item item--alpha">&alpha;&lt;/div>
-    //-                     &lt;div class="item item--omega">&omega;&lt;/div>
-    //-                 &lt;/div>
-    //-
-    //- article.example.example--base-6
-    //-     .container
-    //-         .item.item--alpha &alpha;
-    //-         .item.item--omega &omega;
-    //-
-    //- article.center.code-7
-    //-     .wrapper
-    //-         pre
-    //-             code.css.
-    //-                 .item--alpha {
-    //-                     grid-column-start: 3;
-    //-                 }
-    //-                 .item--omega {
-    //-                     grid-row-start: 3;
-    //-                 }
-    //-
-    //- article.example.example--base-7
-    //-     .container
-    //-         .item.item--alpha &alpha;
-    //-         .item.item--omega &omega;
-    //-
-    //- article.center.code-0
-    //-     .wrapper
-    //-         pre
-    //-             code.css.
-    //-                 .item--alpha {
-    //-                     grid-column-start: 3;
-    //-                     grid-column-end: 5;
-    //-                 }
-    //-                 .item--omega {
-    //-                     grid-row-start: 3;
-    //-                     grid-row-end: 5;
-    //-                 }
-    //-
-    //- article.example.example--base-8
-    //-     .container
-    //-         .item.item--alpha &alpha;
-    //-         .item.item--omega &omega;
-    //-
-    //- article.center.code-0
-    //-     .wrapper
-    //-         pre
-    //-             code.css.
-    //-                 .item--alpha {
-    //-                     grid-column: 3 / 5;
-    //-                 }
-    //-                 .item--omega {
-    //-                     grid-row: 3 / 5;
-    //-                 }
-    //-
-    //- article.example.example--base-9
-    //-     .container
-    //-         .item.item--alpha &alpha;
-    //-         .item.item--omega &omega;
-    //-
-    //- article.center.code-0
-    //-     .wrapper
-    //-         pre
-    //-             code.css.
-    //-                 .item--alpha {
-    //-                     grid-column: 3 / span 2;
-    //-                     grid-row: 1 / span 2;
-    //-                 }
-    //-                 .item--omega {
-    //-                     grid-row: 3 / span 2;
-    //-                     grid-column: 1 / span 2;
-    //-                 }
-    //-
-    //- article.example.example--base-10
-    //-     .container
-    //-         .item.item--alpha &alpha;
-    //-         .item.item--omega &omega;
-    //-
-    //- article.center.code-0
-    //-     .wrapper
-    //-         pre
-    //-             code.css.
-    //-                 .item--alpha {
-    //-                     grid-area: 2 / 2 / span 2 / span 3;
-    //-                 }
-    //-
-    //- article.example.example--base-11
-    //-     .container
-    //-         .item.item--alpha &alpha;
-    //-
-    //- article.center.code-0
-    //-     .wrapper
-    //-         pre
-    //-             code.css.
-    //-                 .item--alpha {
-    //-                     grid-area: alpha;
-    //-                 }
-    //-                 .item--omega {
-    //-                     grid-area: omega;
-    //-                 }
-    //-
-    //- article.center.code-0
-    //-     .wrapper
-    //-         pre
-    //-             code.css.
-    //-                 .container {
-    //-                     grid-template-areas:
-    //-                         "omega omega alpha ."
-    //-                         "omega omega alpha ."
-    //-                         ". . alpha ."
-    //-                         ". . alpha .";
-    //-                 }
-    //-
-    //- article.example.example--base-12
-    //-     .container
-    //-         .item.item--alpha &alpha;
-    //-         .item.item--omega &omega;
-    //-
-    //- article.example.example-grid-layout
-    //-     .page
-    //-         main.main Капитан схватил утконоса и радостноподбросил его в небо. Зверек расправил крылья и взлетел
-    //-         nav.nav Навигация
-    //-         aside.aside Реклама
-    //-         header.header Шапка
-    //-         footer.footer Подвал
-    //-
-    //- article.center.code-1
-    //-     .wrapper
-    //-         pre
-    //-             code.html.
-    //-                 &lt;div class="page">
-    //-                     &lt;main class="main">Контент&lt;/main>
-    //-                     &lt;nav class="nav">Навигация&lt;/nav>
-    //-                     &lt;aside class="aside">Реклама&lt;/aside>
-    //-                     &lt;header class="header">Шапка&lt;/header>
-    //-                     &lt;footer class="footer">Подвал&lt;/footer>
-    //-                 &lt;/div>
-    //-
-    //- article.center.code-1
-    //-     .wrapper
-    //-         pre
-    //-             code.css.
-    //-                 .page {
-    //-                     display: grid;
-    //-                     grid-gap: 0 20px;
-    //-                     grid-template-columns: 250px auto 350px;
-    //-                     grid-template-rows: 100px auto 100px;
-    //-                 }
-    //-
-    //-
-    //- article.center.code-1
-    //-     .wrapper
-    //-         pre
-    //-             code.css.
-    //-                 .header {
-    //-                     grid-row: 1;
-    //-                     grid-column: 1/4;
-    //-                 }
-    //-                 .footer {
-    //-                     grid-row: 3;
-    //-                     grid-column: 1/4;
-    //-                 }
+    //-             code.js.
+    //-                 const methodData = [{
+    //-                     supportedMethods: "basic-card",
+    //-                 }];
     //-
     //- article.center.code-3
     //-     .wrapper
     //-         pre
-    //-             code.css.
-    //-                 .nav {
-    //-                     grid-row: 2;
-    //-                     grid-column: 1;
-    //-                 }
-    //-                 .main {
-    //-                     grid-row: 2;
-    //-                     grid-column: 2;
-    //-                 }
-    //-                 .aside {
-    //-                     grid-row: 2;
-    //-                     grid-column: 3;
-    //-                 }
-    //-
-    //- article.example.example-grid-layout
-    //-     .page
-    //-         main.main Капитан схватил утконоса и радостноподбросил его в небо. Зверек расправил крылья и взлетел
-    //-         nav.nav Навигация
-    //-         aside.aside Реклама
-    //-         header.header Шапка
-    //-         footer.footer Подвал
-    //-
+    //-             code.js.
+    //-                 const methodData = [{
+    //-                     supportedMethods: "https://apple.com/apple-pay",
+    //-                     data: {
+    //-                         version: 3,
+    //-                         merchantIdentifier: "merchant.com.example",
+    //-                         merchantCapabilities: [
+    //-                             "supports3DS",
+    //-                             "supportsCredit",
+    //-                             "supportsDebit"],
+    //-                         supportedNetworks: ["amex", "discover", "masterCard", "visa"],
+    //-                         countryCode: "US",
+    //-                     },
+    //-                 }];
     //-
     //- article.center.code-2
     //-     .wrapper
     //-         pre
-    //-             code.css.
-    //-                 .page {
-    //-                     display: grid;
-    //-                     grid-gap: 0 20px;
-    //-                     grid-template-columns: 250px auto 350px;
-    //-                     grid-template-rows: 100px auto 100px;
-    //-                     grid-template-areas:
-    //-                         "header header header"
-    //-                         "nav    main   aside"
-    //-                         "footer footer footer";
-    //-                 }
+    //-             code.js.
+    //-                 const details = {
+    //-                   id: "order-1",
+    //-                   displayItems: [{
+    //-                     label: "Вотлшебный Говорящий Медведь-Проститутка",
+    //-                     amount: {
+    //-                       currency: "USD",
+    //-                       value: "5.00"
+    //-                     },
+    //-                   },
+    //- article.center.code-1
+    //-     .wrapper
+    //-         pre
+    //-             code.js.
+    //-                   {
+    //-                     label: "Cвинка",
+    //-                     amount: {
+    //-                       currency: "USD",
+    //-                       value: "3.00"
+    //-                     },
+    //-                   }],
+    //- article.center.code-1
+    //-     .wrapper
+    //-         pre
+    //-             code.js.
+    //-                   total: {
+    //-                     label: "Всего",
+    //-                     amount: {
+    //-                       currency: "USD",
+    //-                       value: "8.00"
+    //-                     },
+    //-                   },
+    //-                 };
+    //- article.center.code-0
+    //-     .wrapper
+    //-         pre
+    //-             code.js.
+    //-                 const options = {
+    //-                   requestPayerEmail: true,
+    //-                   requestPayerName: true,
+    //-                   requestPayerPhone: true,
+    //-                   requestShipping: false,
+    //-                 };
+    //-
+    //- article.center.code-6
+    //-     .wrapper
+    //-         pre
+    //-             code.js.
+    //-                 let request = new PaymentRequest(
+    //-                     methodData,
+    //-                     details,
+    //-                     options);
+    //- article.center.code-1
+    //-     .wrapper
+    //-         pre
+    //-             code.js.
+    //-                 const button = document.getElementById('pay');
+    //-                 button.addEventListener('click', pay);
     //-
     //- article.center.code-1
     //-     .wrapper
     //-         pre
-    //-             code.css.
-    //-                 .header { grid-area: header; }
-    //-                 .aside { grid-area: aside; }
-    //-                 .nav { grid-area: nav; }
-    //-                 .main { grid-area: main; }
-    //-                 .footer { grid-area: footer; }
-    //-
-    //-
-    //- article.example.example-grid-layout-area
-    //-     .page
-    //-         main.main Капитан схватил утконоса и радостноподбросил его в небо. Зверек расправил крылья и взлетел
-    //-         nav.nav Навигация
-    //-         aside.aside Реклама
-    //-         header.header Шапка
-    //-         footer.footer Подвал
+    //-             code.js.
+    //-                 const pay = async function () {
+    //-                     const response = await request.show();
+    //-                     await response.complete(validate());
+    //-                     …
+    //-                 };
     //-
     //- article.center.code-2
     //-     .wrapper
     //-         pre
-    //-             code.css.
-    //-                 @media (max-width: 900px) {
-    //-                     .page {
-    //-                         grid-template-areas:
-    //-                             "header header header"
-    //-                             "nav    main   main"
-    //-                             "footer footer footer";
-    //-                     }
+    //-             code.json.
+    //-                 {
+    //-                     details: {},
+    //-                     methodName: "basic-card",
+    //-                     payerEmail: "thesilentimp@gmail.com",
+    //-                     payerName: "Anton",
+    //-                     payerPhone: "+380502773882",
+    //-                     requestId: "order-1",
+    //-                     shippingAddress: null,
+    //-                     shippingOption: null,
     //-                 }
     //-
-    //- article.example.example-grid-layout-area
-    //-     .page.wide-x
-    //-         main.main Капитан схватил утконоса и радостноподбросил его в небо. Зверек расправил крылья и взлетел
-    //-         nav.nav Навигация
-    //-         aside.aside Реклама
-    //-         header.header Шапка
-    //-         footer.footer Подвал
-    //-
-    //- article.center.code-2
-    //-     .wrapper
-    //-         pre
-    //-             code.css.
-    //-                 @media (max-width: 900px) {
-    //-                     .page {
-    //-                         grid-template-areas:
-    //-                             "header header header"
-    //-                             "nav    main   main"
-    //-                             "footer footer footer";
-    //-                     }
-    //-                     .aside {
-    //-                         display: none;
-    //-                     }
-    //-                 }
-    //-
-    //- article.example.example-grid-layout-area
-    //-     .page.wide
-    //-         main.main Капитан схватил утконоса и радостноподбросил его в небо. Зверек расправил крылья и взлетел
-    //-         nav.nav Навигация
-    //-         aside.aside Реклама
-    //-         header.header Шапка
-    //-         footer.footer Подвал
-    //-
-    //- article.illustration.illustration--debug.cloud.cloud--debug
-    //-     h1
-    //-         p.wrapper Как это
-    //-             br
-    //-             | отладить?
-    //-
-    //- article.screen.screen--ffdebug
-    //-
-    //- article.screen.screen--secret-flags
-    //-
-    //- article.screen.screen--chromedebug
-    //-
-    //- article.screen.screen--plugin-1
-    //-
-    //- article.screen.screen--plugin-2
-    //-
-    //- article.illustration.illustration--pinterest
-    //-
-    //- article.screen.screen--pinterest
-    //-
-    //- article.screen.screen--code.overlay
+    //- article.screen.screen--bcp.overlay
     //-     .overlay__abstract.overlay__abstract--right
-    //-         h3.overlay__title Репозиторий с кодом
-    //-         img.overlay__qr(src="images/code.svg", alt="QRCODE cо ссылкой")
+    //-         h3.overlay__title Basic Card Payment
+    //-         img.overlay__qr(src="images/bcp.svg", alt="QRCODE cо ссылкой")
     //-         p
-    //-             a.overlay__link(href="https://github.com/SilentImp/grid-task", data-click=true) https://github.com/SilentImp/grid-task
+    //-             a.overlay__link(href="https://www.w3.org/TR/payment-method-basic-card/", data-click=true) https://www.w3.org/TR/payment-method-basic-card/
+    //-
+    //- article.screen.screen--pmi.overlay
+    //-     .overlay__abstract.overlay__abstract--right
+    //-         h3.overlay__title Payment Method Identifiers
+    //-         img.overlay__qr(src="images/pmi.svg", alt="QRCODE cо ссылкой")
+    //-         p
+    //-             a.overlay__link(href="https://www.w3.org/TR/payment-method-id/", data-click=true) https://www.w3.org/TR/payment-method-id/
+    //-
+    //- article.screen.screen--pmm.overlay
+    //-     .overlay__abstract.overlay__abstract--right
+    //-         h3.overlay__title Payment Method Manifest
+    //-         img.overlay__qr(src="images/pmi.svg", alt="QRCODE cо ссылкой")
+    //-         p
+    //-             a.overlay__link(href="https://www.w3.org/TR/payment-method-manifest/", data-click=true) https://www.w3.org/TR/payment-method-manifest/
+    //-
+    //- article.screen.screen--stripe
+    //-
+    //- article.screen.screen--stripe-atlas
+    //-
+    //- article.screen.screen--stripe-delawer
+    //-
+    //- article.screen.screen--stripe-product
+    //-
+    //- //- article.screen.screen--moto
+    //-
+    //- article.screen.screen--moto.overlay
+    //-     .overlay__abstract.overlay__abstract--right
+    //-         h3.overlay__title MOTO.COURSES
+    //-         img.overlay__qr(src="images/motoc.svg", alt="QRCODE cо ссылкой")
+    //-         p
+    //-             a.overlay__link(href="https://moto.courses/", data-click=true) https://moto.courses/
+    //-         p
+    //-             a.overlay__link(href="https://github.com/SilentImp/moto.courses", data-click=true) https://github.com/SilentImp/moto.courses
     //-
     //-
-    //- article.center.code-1
+    //- article.center.code-0
     //-     .wrapper
     //-         pre
     //-             code.html.
-    //-                 &lt;main class="products">
-    //-                     &lt;article class="product">…&lt;/article>
-    //-                     &lt;article class="product">…&lt;/article>
-    //-                     &lt;article class="product">…&lt;/article>
-    //-                     &lt;article class="product">…&lt;/article>
-    //-                     &lt;article class="product">…&lt;/article>
-    //-                     …
-    //-                 &lt;/main>
+    //-                 &lt;script src="https://js.stripe.com/v3/"></script>
     //-
-    //- article.screen.screen--p1
-    //-
-    //- article.center.code-10
-    //-     .wrapper
-    //-         pre
-    //-             code.css.
-    //-                 $height: 240px;
-    //-                 $width: 150px;
-    //-                 $gap: 20px;
     //-
     //- article.center.code-0
     //-     .wrapper
     //-         pre
-    //-             code.css.
-    //-                 .products {
-    //-                     display: grid;
-    //-                     grid-gap: $gap;
-    //-                     grid-template-columns:
-    //-                         repeat(6, 150px);
+    //-             code.js.
+    //-                 if (Stripe !== undefined) {
+    //-                     const stripe = Stripe('pk_cQQjittH');
+    //-                     // …
     //-                 }
     //-
-    //- article.screen.screen--p2
+    //- article.center.code-6
+    //-     .wrapper
+    //-         pre
+    //-             code.js.
+    //-                 const items = [{
+    //-                     amount: 4000
+    //-                     , label: 'maintenance.course'
+    //-                 }];
+    //-
+    //- article.center.code-3
+    //-     .wrapper
+    //-         pre
+    //-             code.js.
+    //-                 const paymentRequest = stripe.paymentRequest({
+    //-                   country: 'US'
+    //-                   , currency: 'uah'
+    //-                   , requestPayerName: true
+    //-                   , requestPayerEmail: true
+    //-                   , requestPayerPhone: true
+    //-                   , requestShipping: false
+    //-                   , displayItems: items
+    //-                   , total: {
+    //-                     label: 'Мастеркласс'
+    //-                     , amount: 4000
+    //-                   }});
     //-
     //- article.center.code-0
     //-     .wrapper
     //-         pre
-    //-             code.css.
-    //-                 &--tall {
-    //-                     …
-    //-                     grid-row: span 2;
-    //-                     height: calc($height*2 + $gap);
-    //-                 }
+    //-             code.js.
+    //-               const elements = stripe.elements();
+    //-                 const prButton = elements.create(
+    //-                   'paymentRequestButton',
+    //-                   { paymentRequest }
+    //-                 );
     //-
     //- article.center.code-0
     //-     .wrapper
     //-         pre
-    //-             code.css.
-    //-                 &--big {
-    //-                     …
-    //-                     grid-row: span 2;
-    //-                     grid-column: span 2;
-    //-                     height: calc($height*2 + $gap);
-    //-                     width: calc($width*2 + $gap);
-    //-                 }
-    //-
-    //- article.screen.screen--p3
-    //-
-    //- article.screen.screen--banner
+    //-             code.js.
+    //-                 const response = await fetch('/skus');
+    //-                 const sku = await response.json();
     //-
     //- article.center.code-2
     //-     .wrapper
     //-         pre
-    //-             code.html.
-    //-                 &lt;main class="products">
-    //-                     &lt;aside class="banner">&lt;/aside>
-    //-                     &lt;article class="product product--tall">&lt;/article>
-    //-                     &lt;article class="product">&lt;/article>
-    //-                     &lt;article class="product product--tall">&lt;/article>
-    //-
-    //- article.center.code-8
-    //-     .wrapper
-    //-         pre
-    //-             code.css.
-    //-                 .banner {
-    //-                     …
-    //-                     grid-row-start: 2;
-    //-                     grid-column-start: 2;
-    //-                 }
-    //-
-    //- article.screen.screen--p4
-    //-
-    //- article.screen.screen--banner-wide
+    //-             code.js.
+    //-                 const stripe = require('stripe')('sku_CckkusdfZ');
+    //-                 stripe.skus.retrieve('sku_CckkusdfZ',
+    //-                   (error, sku) => {
+    //-                     if (error === null) {
+    //-                       res.send(JSON.stringify(sku)).status(200).end();
+    //-                     } else {
+    //-                       res.status(error.statusCode, error.message)
+    //-                         .end(http.STATUS_CODES[error.statusCode]);
+    //-                     }});
     //-
     //- article.center.code-2
     //-     .wrapper
     //-         pre
-    //-             code.html.
-    //-                 &lt;main class="products">
-    //-                     &lt;aside class="banner-wide">&lt;/aside>
-    //-                     &lt;article class="product product--tall">&lt;/article>
-    //-                     &lt;article class="product">&lt;/article>
-    //-                     &lt;article class="product product--tall">&lt;/article>
-    //-
-    //-
-    //- article.center.code-8
-    //-     .wrapper
-    //-         pre
-    //-             code.css.
-    //-                 .banner--wide {
-    //-                     …
-    //-                     grid-row-start: 4;
-    //-                     grid-column: span 6;
+    //-             code.js.
+    //-                 const result = await paymentRequest.canMakePayment();
+    //-                 if (result) {
+    //-                     prButton.mount('#payment-request-button');
+    //-                 } else {
+    //-                     // …
     //-                 }
-    //-
-    //- article.screen.screen--p5
-    //-
-    //- article.center.code-8
-    //-     .wrapper
-    //-         pre
-    //-             code.css.
-    //-                 .products {
-    //-                     …
-    //-                     grid-auto-flow: dense;
-    //-                 }
-    //-
-    //- article.screen.screen--p6
     //-
     //- article.center.code-2
     //-     .wrapper
     //-         pre
-    //-             code.html.
-    //-                 &lt;article class="content">
-    //-                     &lt;aside class="banners">
-    //-                         &lt;aside class="banner">&lt;/aside>
-    //-                         &lt;!--…-->
-    //-                     &lt;/aside>
-    //-                     &lt;main class="products">
-    //-                         &lt;article class="product">&lt;/article>
-    //-                         &lt;!--…-->
-    //-                     &lt;/main>
-    //-                 &lt;/article>
+    //-             code.js.
+    //-                 paymentRequest.on('token', async (event) => {
+    //-                     const { token } = event;
+    //-                     const response = await fetch('/order', {
+    //-                         method: 'POST'
+    //-                         , body: JSON.stringify({ token, sku })
+    //-                         , headers: {'content-type': 'application/json'}
+    //-                     });
+    //-                 });
     //-
-    //- article.screen.screen--p7
-    //-
-    //- article.center.code-8
+    //- article.center.code-2
     //-     .wrapper
     //-         pre
-    //-             code.css.
-    //-                 .banners,
-    //-                 .products {
-    //-                     display: contents;
-    //-                     margin: auto;
-    //-                 }
+    //-             code.js.
+    //-                 const order = await stripe.orders.create({
+    //-                   email: token.email
+    //-                   , currency: sku.currency
+    //-                   , items: [{
+    //-                       type: 'sku'
+    //-                       , parent: sku.id
+    //-                     }]});
     //-
-    //- article.screen.screen--p8
     //-
-    //- article.screen.screen--contents
-    //-
-    //- article.screen.screen--support-future
-    //-
-    //- article.center.code-0
+    //- article.center.code-2
     //-     .wrapper
     //-         pre
-    //-             code.css.
-    //-                 @supports ( grid-auto-flow: dense ) {
-    //-                     /* Магия */
-    //-                 }
+    //-             code.js.
+    //-                 const paidOrder = await stripe.orders.pay(order.id, {
+    //-                   source: (token.livemode ? token.id : 'tok_visa'),
+    //-                 });
     //-
-    //- article.center.code-0
-    //-     .wrapper
-    //-         pre
-    //-             code.css.
-    //-                 /* Флекс */
-    //-                 .products {…}
-    //-                 .product {…}
-    //-                 @supports ( grid-auto-flow: dense ) {
-    //-                     /* Гриды */
-    //-                     .products {…}
-    //-                     .product {…}
-    //-                 }
+    //-                 const fulfilledOrder = await stripe.orders
+    //-                     .update(order.id, {
+    //-                       status: 'fulfilled'
+    //-                     });
     //-
-    //- article.center.code-0
-    //-     .wrapper
-    //-         pre
-    //-             code.css.
-    //-                 /* Флекс */
-    //-                 .products {
-    //-                     max-width: 1020px;
-    //-                     margin: 10px auto;
-    //-                     display: flex;
-    //-                     flex-wrap: wrap;
-    //-                 }
+    //-                 res.send(JSON.stringify(fulfilledOrder))
+    //-                     .status(200).end();
     //-
-    //- article.center.code-0
-    //-     .wrapper
-    //-         pre
-    //-             code.css.
-    //-                 /* Флекс */
-    //-                 .product {
-    //-                     …
-    //-                     margin: 0 10px 20px;
-    //-                 }
+    //- article.screen.screen--letter
     //-
-    //- article.center.code-0
-    //-     .wrapper
-    //-         pre
-    //-             code.css.
-    //-                 /* Гриды */
-    //-                 .product {
-    //-                     …
-    //-                     margin: auto;
-    //-                 }
+    //- article.screen.screen--ap1
     //-
-    //- article.screen.screen--p9
+    //- article.screen.screen--gp1
     //-
-    //- article.screen.screen--p10
+    //- article.screen.screen--gp2
+    //-
+    //- article.screen.screen--gp3
+    //-
 
     article.contacts.center.qrcode
         .wrapper
