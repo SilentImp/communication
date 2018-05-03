@@ -1,3 +1,3 @@
-# Как сделать чекаут лучше
+# Комуникация с фронтендерами
 
-* [Слайды](https://silentimp.github.io/paymentRequestAPI/)
+* [Слайды](https://silentimp.github.io/communication/)
